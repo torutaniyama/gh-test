@@ -23,4 +23,8 @@ jobs:
           fetch-depth: 0
 
       - name: Read Secret
-        run: echo "${{ secrets.SECRET }}"
+        run: |
+          if [${{ secrets.SECRET }} == ""]; then
+            echo "Secret is empty"
+            exit 1
+          fi
