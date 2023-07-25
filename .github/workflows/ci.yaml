@@ -12,6 +12,12 @@ on:
 env:
   AWS_REGION: ap-northeast-1
 jobs:
+  actor:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check actor
+        run: |
+          echo "Actor: ${{ github.actor }}"
   ci:
     timeout-minutes: 10
     runs-on: ubuntu-22.04
